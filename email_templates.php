@@ -1,0 +1,33 @@
+<?php
+require_once __DIR__ . '/mail_config.php';
+
+function sendVerificationEmail($name, $email, $link) {
+    $subject = "Verify Your Email - ImageLib";
+    $body = "<html><head><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;padding:20px;}.container{max-width:500px;margin:0 auto;background:#ffffff;border-radius:16px;padding:30px;border:1px solid #e2e8f0;}.logo{text-align:center;font-size:24px;font-weight:700;color:#4F46E5;}.logo span{color:#F59E0B;}h2{color:#1a1a1a;}.btn{display:inline-block;background:#4F46E5;color:#ffffff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;}.footer{font-size:12px;color:#94a3b8;text-align:center;margin-top:20px;}</style></head><body><div class='container'><div class='logo'>Image<span>Lib</span></div><h2>Hello $name,</h2><p>Please verify your email address to complete your registration.</p><p style='text-align:center;margin:25px 0;'><a href='$link' class='btn'>Verify Email</a></p><p style='font-size:13px;color:#6a7a8a;'>This link will expire in 24 hours.</p><hr style='border-color:#e2e8f0;margin:20px 0;'><div class='footer'>© 2026 ImageLib. All rights reserved.</div></div></body></html>";
+    return sendEmail($email, $subject, $body);
+}
+
+function sendWelcomeEmail($user_id, $name, $email) {
+    $subject = "🎉 Welcome to ImageLib!";
+    $body = "<html><head><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;padding:20px;}.container{max-width:500px;margin:0 auto;background:#ffffff;border-radius:16px;padding:30px;border:1px solid #e2e8f0;}.logo{text-align:center;font-size:24px;font-weight:700;color:#4F46E5;}.logo span{color:#F59E0B;}h2{color:#1a1a1a;}.btn{display:inline-block;background:#4F46E5;color:#ffffff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;}.footer{font-size:12px;color:#94a3b8;text-align:center;margin-top:20px;}</style></head><body><div class='container'><div class='logo'>Image<span>Lib</span></div><h2>Welcome, $name! 👋</h2><p>You're now part of the ImageLib community.</p><p><strong>🎁 You've received 100 free credits!</strong></p><p>Start browsing, uploading, and earning more credits today.</p><p style='text-align:center;margin:25px 0;'><a href='https://imagelib.lovestoblog.com/gallery.php' class='btn'>Browse Gallery →</a></p><hr style='border-color:#e2e8f0;margin:20px 0;'><div class='footer'>© 2026 ImageLib. All rights reserved.</div></div></body></html>";
+    return sendEmail($email, $subject, $body);
+}
+
+function sendBadgeUnlockedEmail($user_id, $name, $email, $badge_level, $badge_name, $badge_emoji) {
+    $subject = "🏆 Badge Unlocked: $badge_name!";
+    $body = "<html><head><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;padding:20px;}.container{max-width:500px;margin:0 auto;background:#ffffff;border-radius:16px;padding:30px;border:1px solid #e2e8f0;}.badge{font-size:64px;text-align:center;margin:10px 0;}h2{color:#1a1a1a;}.btn{display:inline-block;background:#4F46E5;color:#ffffff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;}.footer{font-size:12px;color:#94a3b8;text-align:center;margin-top:20px;}</style></head><body><div class='container'><div class='badge'>$badge_emoji</div><h2>Congratulations, $name! 🎉</h2><p>You've reached the <strong>$badge_name</strong> badge!</p><p>Your ImageLib theme has been automatically updated to match your achievement.</p><p style='text-align:center;margin:25px 0;'><a href='https://imagelib.lovestoblog.com/profile.php' class='btn'>View Profile →</a></p><hr style='border-color:#e2e8f0;margin:20px 0;'><div class='footer'>© 2026 ImageLib. All rights reserved.</div></div></body></html>";
+    return sendEmail($email, $subject, $body);
+}
+
+function sendFeedbackConfirmationEmail($user_id, $name, $email, $credits_earned) {
+    $subject = "📝 Feedback Received!";
+    $body = "<html><head><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;padding:20px;}.container{max-width:500px;margin:0 auto;background:#ffffff;border-radius:16px;padding:30px;border:1px solid #e2e8f0;}h2{color:#1a1a1a;}.credit-badge{display:inline-block;background:#20B2AA;color:#fff;padding:4px 16px;border-radius:30px;font-weight:600;}.btn{display:inline-block;background:#4F46E5;color:#ffffff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;}.footer{font-size:12px;color:#94a3b8;text-align:center;margin-top:20px;}</style></head><body><div class='container'><h2>Thank you, $name! 🙏</h2><p>Your feedback has been recorded successfully.</p><p>Keep sharing your thoughts every month to earn more!</p><p style='text-align:center;margin:25px 0;'><a href='https://imagelib.lovestoblog.com/form.php' class='btn'>Submit More Feedback →</a></p><hr style='border-color:#e2e8f0;margin:20px 0;'><div class='footer'>© 2026 ImageLib. All rights reserved.</div></div></body></html>";
+    return sendEmail($email, $subject, $body);
+}
+
+function sendOutOfCreditsEmail($user_id, $name, $email) {
+    $subject = "💎 You've Used All Your ImageLib Credits!";
+    $body = "<html><head><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;padding:20px;}.container{max-width:500px;margin:0 auto;background:#ffffff;border-radius:16px;padding:30px;border:1px solid #e2e8f0;}h2{color:#1a1a1a;}.btn{display:inline-block;background:#4F46E5;color:#ffffff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;}.footer{font-size:12px;color:#94a3b8;text-align:center;margin-top:20px;}.social-links{margin:15px 0;padding:15px;background:#f8fafc;border-radius:10px;}</style></head><body><div class='container'><h2>Hello $name,</h2><p>You've used all your 100 free credits on ImageLib.</p><p>To continue downloading and embedding images, you can purchase more credits.</p><div class='social-links'><p><strong>📱 Contact us via social media:</strong></p><a href='https://x.com/Uncensored_41' target='_blank'>🐦 Twitter/X</a> | <a href='https://www.instagram.com/uncensored_41/' target='_blank'>📸 Instagram</a> | <a href='https://github.com/Dark-Harry-Potter' target='_blank'>💻 GitHub</a></div><p><strong>💰 Credit Packs:</strong></p><ul><li>Starter: $5 — 100 credits</li><li>Pro: $15 — 350 credits</li><li>Premium: $30 — 800 credits</li><li>Enterprise: $50 — 1500 credits</li></ul><p>DM us on any platform and we'll add credits to your account!</p><p style='text-align:center;margin:25px 0;'><a href='https://x.com/Uncensored_41' class='btn'>Contact Us Now</a></p><hr style='border-color:#e2e8f0;margin:20px 0;'><div class='footer'>© 2026 ImageLib. All rights reserved.</div></div></body></html>";
+    return sendEmail($email, $subject, $body);
+}
+?>

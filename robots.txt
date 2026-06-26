@@ -1,0 +1,48 @@
+# robots.txt – ImageLib SEO Instructions
+
+User-agent: *
+Allow: /
+
+# Allow crawling of all public pages
+Allow: /index.php
+Allow: /gallery.php
+Allow: /upload.php
+Allow: /profile.php
+Allow: /form.php
+Allow: /blog.php
+Allow: /blog-detail.php
+Allow: /about.php
+Allow: /faq.php
+Allow: /terms.php
+Allow: /privacy.php
+Allow: /disclaimer.php
+Allow: /sitemap.php
+
+# Disallow admin-related and sensitive pages
+Disallow: /admin.php
+Disallow: /credit_history.php
+Disallow: /download.php
+Disallow: /embed.php
+Disallow: /process_feedback.php
+Disallow: /forgot_password.php
+Disallow: /reset_password.php
+Disallow: /logout.php
+Disallow: /category.php
+Disallow: /tag.php
+Disallow: /newsletter.php
+
+# Disallow login and register pages from being indexed (prevents duplicate content issues)
+Disallow: /login.php
+Disallow: /register.php
+
+# Disallow file directories
+Disallow: /uploads/
+Disallow: /PHPMailer/
+Disallow: /logs/
+Disallow: /fonts/
+
+# Sitemap location
+Sitemap: https://imagelib.lovestoblog.com/sitemap.php
+
+# Crawl delay (be polite to the server)
+Crawl-delay: 5

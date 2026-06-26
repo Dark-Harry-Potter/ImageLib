@@ -1,0 +1,22 @@
+{
+    "name": "ImageLib",
+    "short_name": "ImageLib",
+    "description": "Free responsive images for developers",
+    "start_url": "/ImageLib/index.php",
+    "display": "standalone",
+    "background_color": "#0A0A0A",
+    "theme_color": "#FF6B4A",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/ImageLib/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/ImageLib/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
