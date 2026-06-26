@@ -1,0 +1,28 @@
+=== PREVIEW.PHP DEBUG START ===
+Time: 2026-06-23 06:50:59
+Script loaded successfully
+Image ID: 15
+Database connection: OK
+Statement prepared: OK
+Filename from DB: 1781079596_ccf757f18d53eaed.png
+Full filepath: C:\xampp\htdocs\ImageLib/uploads/1781079596_ccf757f18d53eaed.png
+File exists: YES
+GD extension: LOADED
+Image info: Array
+(
+    [0] => 152
+    [1] => 201
+    [2] => 2
+    [3] => width="152" height="201"
+    [bits] => 8
+    [channels] => 3
+    [mime] => image/jpeg
+)
+
+MIME type: image/jpeg
+Created from JPEG: SUCCESS
+Image dimensions: 152 x 201
+Watermark text: Yashvi
+Attempting to output image...
+Image output complete!
+=== PREVIEW.PHP DEBUG END ===

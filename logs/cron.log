@@ -1,0 +1,2 @@
+touch logs/cron.log
+chmod 666 logs/cron.log
